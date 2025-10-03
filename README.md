@@ -1,40 +1,26 @@
-# 📋 Template-Anleitung
+# Credit Risk Analysis 🚀
 
-> **Für Kursteilnehmer*innen:** Diese Sektion nach dem Setup deines Projekts löschen!
+> Predicting the probability of loan default based on borrower information.
 
-## So verwenden Sie dieses Template:
-Dieses Template hilft dir, dein Data Science Projekt effizient zu organisieren und zu dokumentieren. Es bietet eine gängige Struktur, um deine Arbeit zu planen, durchzuführen und zu präsentieren. Templates können in GitHub über den Button **"Use this template"** in der oberen rechten Ecke in ein eigenes Repository überführt werden. Nutze diese Vorlage als Inspiration und passe sie an dein Projekt an! 
+## 📊 Project Overview
 
-Neben einer grundlegenden Ordnerstruktur für deine Dateien und Notebooks, enthält dieses Template unter `.github\ISSUE_TEMPLATE` einige Vorlagen für GitHub Issues, die dir helfen, deine Aufgaben zu organisieren und den Fortschritt deines Projekts zu verfolgen.
+**Problem Statement:** 
+Can we predict whether a borrower will be able to pay back the loan or is there a risk of default?
 
-Lies dir die Datei `PROJECT_SETUP.md` durch, um mehr über die Nutzung dieses Templates zu erfahren.
+**Goal:** 
+The goal of this project is to build a predictive model that estimates the probability of loan default.
 
-Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei anpassen, um dein Projekt zu beschreiben und zu präsentieren. Lösche anschließend diese Anleitung.
-
-
-# [DEIN PROJEKTTITEL HIER] 🚀
-
-> Eine kurze, prägnante Beschreibung deines Data Science Projekts in 1-2 Sätzen.
-
-## 📊 Projektübersicht
-
-**Problemstellung:** 
-<!-- Beschreibe das Problem, das du lösen möchtest -->
-
-**Ziel:** 
-<!-- Was ist das Hauptziel deines Projekts? -->
-
-**Methoden:** 
-<!-- Welche Techniken/Algorithmen verwendest du? -->
+**Methods:** 
+Exploratory Data Analysis
+Logistic Regression
 
 ## 🎯 Key Findings
 
-<!-- Hier deine wichtigsten Erkenntnisse in 3-5 Bullet Points -->
-- 📈 **Erkenntnis 1:** Kurze Beschreibung
-- 🔍 **Erkenntnis 2:** Kurze Beschreibung  
-- 💡 **Erkenntnis 3:** Kurze Beschreibung
+- 📈 **Key finding 1:** Kurze Beschreibung
+- 🔍 **Key finding 2:** Kurze Beschreibung  
+- 💡 **Key finding 3:** Kurze Beschreibung
 
-## 📁 Repository Struktur
+## 📁 Repository Structure
 
 ```
 ├── data/
@@ -48,27 +34,31 @@ Für dein Projekt kannst du die folgenden Abschnitte in der `README.md` Datei an
 └── docs/                       # Zusätzliche Dokumentation
 ```
 
-## 🔧 Verwendete Technologien
+## 🔧 Technologies Used
 
-**Programmiersprachen:**
-<!-- z.B. Python, R, SQL -->
+**Programming Languages:**
+Python
 
 **Libraries & Frameworks:**
-<!-- z.B. pandas, scikit-learn, matplotlib, etc. -->
+pandas, matplotlib, seaborn
 
 **Tools:**
-<!-- z.B. Jupyter, Git, Docker, etc. -->
+Jupyter, Git, GitHub, VS Code
 
-## 📊 Daten
+## 📊 Data
 
-**Datenquelle:** 
-<!-- Woher kommen deine Daten? -->
+**Source:** 
+Kaggle: Credit Risk Dataset(https://www.kaggle.com/datasets/laotse/credit-risk-dataset) 
 
-**Datensatz-Größe:** 
-<!-- Anzahl Zeilen/Spalten, Dateigröße -->
+**Size:** 
+32581 rows, 12 columns
 
-**Wichtige Features:** 
-<!-- Beschreibung der wichtigsten Variablen -->
+**Important Features:** 
+cb_person_default_on_file
+loan_status - target variable (0 - no default, 1 - default)
+loan_grade - creditworthiness
+loan_amnt - loan amount                  
+loan_int_rate - interest rate 
 
 ## 🤖 Methodik
 
