@@ -54,16 +54,27 @@ Kaggle: Credit Risk Dataset(https://www.kaggle.com/datasets/laotse/credit-risk-d
 32581 rows, 12 columns
 
 **Important Features:** 
-cb_person_default_on_file
-loan_status - target variable (0 - no default, 1 - default)
-loan_grade - creditworthiness
-loan_amnt - loan amount                  
-loan_int_rate - interest rate 
+'cb_person_default_on_file' - renamed to -> 'default'
+'loan_status' - target variable (0 - no default, 1 - default)
+'loan_grade' - creditworthiness
+'loan_amnt' - loan amount                  
+'loan_int_rate' - interest rate 
 
 ## 🤖 Methodik
 
 ### Data Preprocessing
-<!-- Kurze Beschreibung deiner Datenbereinigung -->
+There are 2 columns with missing values:
+'person_emp_length' - 895 values, ~2.75% of data. They were replaced by median.
+'loan_int_rate' - 3116 values, ~9.56% of data. They were replace by medians grouped by each loan_grade.
+
+There are 16 unrealistic values:
+There are 5 cases with the person_age more than 100 years old.
+There are 2 cases with the person employment length 123 years. 
+There are 9 cases with the income more than 1000000.
+All are deleted.
+
+Discrepancies:
+1010 values in column 'loan_int_rate' were calculated wrong. They are repaced with the correct ones. Formula used: loan_amnt/person_income
 
 ### Modeling Approach  
 <!-- Welche Modelle hast du getestet? -->
