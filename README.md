@@ -24,14 +24,19 @@ Logistic Regression
 
 ```
 ├── data/
-│   ├── raw/                    # Originaldaten
-│   └── processed/              # Bereinigte Daten
-├── notebooks/                  # Jupyter Notebooks
-│   └── 01_exploration.ipynb    # Datenexploration
-├── src/dpp                     # Python Module
-├── test/                       # Unit Tests
-├── pyproject.toml              # Projektkonfiguration
-└── docs/                       # Zusätzliche Dokumentation
+│   ├── raw/                        # Original Data
+│   └── credit-risk-dataset         # Original Data 
+│       └── credit-risk-dataset.csv # Original Data 
+│   └── processed/                  # Cleaned Data
+│       └── credit_risk_cleaned.csv # Cleaned Data
+├── notebooks/                      # Jupyter Notebooks
+│   └── 01_exploration.ipynb        # Datenexploration
+│   └── 02_cleaning_loans.ipynb     # Data Cleaning
+│   └── 03_eda_loans.ipynb          # EDA
+├── src/dpp                         # Python Module
+├── test/                           # Unit Tests
+├── pyproject.toml                  # Projektkonfiguration
+└── docs/                           # Zusätzliche Dokumentation
 ```
 
 ## 🔧 Technologies Used
@@ -40,7 +45,7 @@ Logistic Regression
 Python
 
 **Libraries & Frameworks:**
-pandas, matplotlib, seaborn
+pandas, matplotlib, seaborn, numpy
 
 **Tools:**
 Jupyter, Git, GitHub, VS Code
@@ -87,24 +92,24 @@ Discrepancies:
 **Model Performance:**
 <!-- Deine besten Metriken (Accuracy, RMSE, etc.) -->
 
-**Wichtigste Visualisierungen:**
+**Key Visualizations:**
 <!-- Verweis auf Key-Plots in deinen Notebooks -->
 
-## 🚀 Reproduzierbarkeit
+## 🚀 Reproducibility
 
 ### Setup
 ```bash
-# Repository klonen
+# Clone Repository 
 git clone [DEIN-REPO-LINK]
 cd [REPO-NAME]
 
-# Dependencies installieren
+# Install Dependencies 
 uv sync
 ```
 
-### Ausführung
+### How to Run
 ```bash
-# Notebooks in dieser Reihenfolge ausführen:
+# Run the notebooks in this order:
 # 1. notebooks/01_exploration.ipynb
 # 2. notebooks/02_preprocessing.ipynb  
 # 3. notebooks/03_modeling.ipynb
@@ -112,15 +117,15 @@ uv sync
 ```
 
 
-## 🎓 Über dieses Projekt
+## 🎓 About This Project
 
 **Kontext:** 
 <!-- Im Rahmen welches Kurses/welcher Veranstaltung? -->
 
-**Zeitraum:** 
+**Time Period:** 
 <!-- Wann hast du das Projekt durchgeführt? -->
 
-**Autor:** 
+**Author:** 
 <!-- Dein Name -->
 
 ## 📞 Kontakt
@@ -129,10 +134,10 @@ uv sync
 **E-Mail:** deine.email@beispiel.de  
 **LinkedIn:** [Dein Profil](https://linkedin.com/in/dein-profil)
 
-## 🙏 Danksagungen
+## 🙏 Acknowledgements
 
 <!-- Hier kannst du Personen oder Ressourcen erwähnen, die dir geholfen haben -->
 
 ---
 
-**⭐ Wenn dir dieses Projekt gefällt, gib gerne einen Star!**
+**⭐ If you like this project, feel free to give it a star!**
