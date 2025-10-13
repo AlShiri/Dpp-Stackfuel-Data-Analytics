@@ -16,9 +16,9 @@ Logistic Regression
 
 ## 🎯 Key Findings
 
-- 📈 **Key finding 1:** Kurze Beschreibung
-- 🔍 **Key finding 2:** Kurze Beschreibung  
-- 💡 **Key finding 3:** Kurze Beschreibung
+- 📈 **Key finding 1:** Borrowers with higher interest rates and larger loan-to-income ratios are more likely to default.
+- 🔍 **Key finding 2:** Past default history strongly predicts future defaults, with repeat defaulters about twice as likely to default again.
+- 💡 **Key finding 3:** Borrower profile—including lower loan grades, certain loan purposes (debt consolidation, medical, home improvement), and renting versus owning—also influences risk, highlighting how both creditworthiness and personal circumstances affect default likelihood.
 
 ## 📁 Repository Structure
 
@@ -31,8 +31,8 @@ Logistic Regression
 │       └── credit_risk_cleaned.csv # Cleaned Data
 ├── notebooks/                      # Jupyter Notebooks
 │   └── 01_exploration.ipynb        # Datenexploration
-│   └── 02_cleaning_loans.ipynb     # Data Cleaning
-│   └── 03_eda_loans.ipynb          # EDA
+│   └── 02_preprocessing.ipynb      # Data Cleaning
+│   └── 03_modeling.ipynb           # EDA
 ├── src/dpp                         # Python Module
 ├── test/                           # Unit Tests
 ├── pyproject.toml                  # Projektkonfiguration
@@ -45,7 +45,7 @@ Logistic Regression
 Python
 
 **Libraries & Frameworks:**
-pandas, matplotlib, seaborn, numpy
+pandas, matplotlib, seaborn, numpy, statsmodels
 
 **Tools:**
 Jupyter, Git, GitHub, VS Code
@@ -63,37 +63,39 @@ Kaggle: Credit Risk Dataset(https://www.kaggle.com/datasets/laotse/credit-risk-d
 'loan_status' - target variable (0 - no default, 1 - default)
 'loan_grade' - creditworthiness
 'loan_amnt' - loan amount                  
-'loan_int_rate' - interest rate 
+'loan_int_rate' - loan interest rate 
+'loan_percent_income' - loan to income ration
 
 ## 🤖 Methodik
 
 ### Data Preprocessing
-There are 2 columns with missing values:
-'person_emp_length' - 895 values, ~2.75% of data. They were replaced by median.
-'loan_int_rate' - 3116 values, ~9.56% of data. They were replace by medians grouped by each loan_grade.
+Missing values:
+person_emp_length: 895 missing (~2.75%) → replaced with the median
+loan_int_rate: 3,116 missing (~9.56%) → replaced with group medians by loan_grade
 
-There are 16 unrealistic values:
-There are 5 cases with the person_age more than 100 years old.
-There are 2 cases with the person employment length 123 years. 
-There are 9 cases with the income more than 1000000.
-All are deleted.
+Unrealistic values:
+Unrealistic ages (>100) and extremely high incomes (>1,000,000) → removed
 
 Discrepancies:
-1010 values in column 'loan_int_rate' were calculated wrong. They are repaced with the correct ones. Formula used: loan_amnt/person_income
+1,010 incorrect values in loan_int_rate → recalculated and corrected
 
 ### Modeling Approach  
-<!-- Welche Modelle hast du getestet? -->
+We applied logistic regression to model the probability of loan default.  
+- Tested univariate models ('loan_percent_income', 'loan_int_rate')  
+- Fitted using statsmodels.formula.api.logit()
 
 ### Evaluation
-<!-- Wie hast du die Ergebnisse bewertet? -->
+- Model fit assessed using Pseudo R² (0.13 for main model), coefficient significance, and visual inspection of probability curves.  
 
-## 📈 Ergebnisse
+## 📈 Results
 
 **Model Performance:**
-<!-- Deine besten Metriken (Accuracy, RMSE, etc.) -->
+- Logistic regression successfully identifies borrowers at high risk based on key features.  
+- Probability curves allow identification of the 50% risk threshold
 
 **Key Visualizations:**
-<!-- Verweis auf Key-Plots in deinen Notebooks -->
+1. Logistic regression probability curve with 50% threshold line.
+2.
 
 ## 🚀 Reproducibility
 
