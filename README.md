@@ -11,12 +11,12 @@ Can we predict whether a borrower will be able to pay back the loan or is there 
 The goal of this project is to build a predictive model that estimates the probability of loan default.
 
 **Methods:** 
-Exploratory Data Analysis
-Logistic Regression
+Performed exploratory data analysis to identify key relationships and trends.  
+Applied logistic regression to model the probability of loan default and interpret key risk drivers.
 
 ## 🎯 Key Findings
 
-- 📈 **Key finding 1:** Borrowers with higher interest rates and larger loan-to-income ratios are more likely to default.
+- 📈 **Key finding 1:** Borrowers with larger loan-to-income ratio and higher interest rates are more likely to default.
 - 🔍 **Key finding 2:** Past default history strongly predicts future defaults, with repeat defaulters about twice as likely to default again.
 - 💡 **Key finding 3:** Borrower profile—including lower loan grades, certain loan purposes (debt consolidation, medical, home improvement), and renting versus owning—also influences risk, highlighting how both creditworthiness and personal circumstances affect default likelihood.
 
@@ -32,11 +32,12 @@ Logistic Regression
 ├── notebooks/                      # Jupyter Notebooks
 │   └── 01_exploration.ipynb        # Datenexploration
 │   └── 02_preprocessing.ipynb      # Data Cleaning
-│   └── 03_modeling.ipynb           # EDA
+│   └── 03_modeling.ipynb           # Modeling
+│   └── 03_results.ipynb            # Results
 ├── src/dpp                         # Python Module
 ├── test/                           # Unit Tests
-├── pyproject.toml                  # Projektkonfiguration
-└── docs/                           # Zusätzliche Dokumentation
+├── pyproject.toml                  # Project configuration
+└── docs/                           # Additional Documentation
 ```
 
 ## 🔧 Technologies Used
@@ -48,12 +49,12 @@ Python
 pandas, matplotlib, seaborn, numpy, statsmodels
 
 **Tools:**
-Jupyter, Git, GitHub, VS Code
+Jupyter Notebook, VS Code, Git, GitHub
 
 ## 📊 Data
 
 **Source:** 
-Kaggle: Credit Risk Dataset(https://www.kaggle.com/datasets/laotse/credit-risk-dataset) 
+Kaggle: https://www.kaggle.com/datasets/laotse/credit-risk-dataset
 
 **Size:** 
 32581 rows, 12 columns
@@ -70,14 +71,14 @@ Kaggle: Credit Risk Dataset(https://www.kaggle.com/datasets/laotse/credit-risk-d
 
 ### Data Preprocessing
 Missing values:
-person_emp_length: 895 missing (~2.75%) → replaced with the median
-loan_int_rate: 3,116 missing (~9.56%) → replaced with group medians by loan_grade
+'person_emp_length': 895 missing (~2.75%) → replaced with the median
+'loan_int_rate': 3,116 missing (~9.56%) → replaced with group medians by loan_grade
 
 Unrealistic values:
-Unrealistic ages (>100) and extremely high incomes (>1,000,000) → removed
+Ages >100 and incomes >1,000,000 → removed
 
 Discrepancies:
-1,010 incorrect values in loan_int_rate → recalculated and corrected
+1,010 incorrect 'loan_int_rate' values → recalculated and corrected
 
 ### Modeling Approach  
 We applied logistic regression to model the probability of loan default.  
@@ -85,25 +86,29 @@ We applied logistic regression to model the probability of loan default.
 - Fitted using statsmodels.formula.api.logit()
 
 ### Evaluation
-- Model fit assessed using Pseudo R² (0.13 for main model), coefficient significance, and visual inspection of probability curves.  
+- Model fit assessed using Pseudo R² (0.13 for main model)
+- Probability curves visualized to interpret risk thresholds  
 
 ## 📈 Results
 
 **Model Performance:**
-- Logistic regression successfully identifies borrowers at high risk based on key features.  
-- Probability curves allow identification of the 50% risk threshold
+- Logistic regression identifies high-risk borrowers effectively based on income and interest rate  
+- 50% risk threshold found around ~0.35 loan-to-income ratio
 
 **Key Visualizations:**
-1. Logistic regression probability curve with 50% threshold line.
-2.
+1. Default rate by loan purpose
+2. Default rate by home ownership
+3. Actual vs. historical default
+4. Logistic regression probability curve with 50% threshold line
+5. Distribution of predicted probabilities
 
 ## 🚀 Reproducibility
 
 ### Setup
 ```bash
 # Clone Repository 
-git clone [DEIN-REPO-LINK]
-cd [REPO-NAME]
+git clone https://github.com/AlShiri/Dpp-Stackfuel-Data-Analytics.git
+cd Dpp-Stackfuel-Data-Analytics
 
 # Install Dependencies 
 uv sync
@@ -121,20 +126,20 @@ uv sync
 
 ## 🎓 About This Project
 
-**Kontext:** 
-<!-- Im Rahmen welches Kurses/welcher Veranstaltung? -->
+**Context:** 
+This project was completed as part of a Data Analytics course, focusing on applying statistical modeling and data visualization to real-world business questions.
 
 **Time Period:** 
-<!-- Wann hast du das Projekt durchgeführt? -->
+October 2025
 
 **Author:** 
-<!-- Dein Name -->
+Alla Shirinyan
 
 ## 📞 Kontakt
 
-**GitHub:** [@DeinUsername](https://github.com/DeinUsername)  
-**E-Mail:** deine.email@beispiel.de  
-**LinkedIn:** [Dein Profil](https://linkedin.com/in/dein-profil)
+**GitHub:** [@AlShiri](https://github.com/AlShiri)  
+**E-Mail:** allashirinyan@hotmail.com  
+**LinkedIn:** [Alla Shirinyan](https://www.linkedin.com/in/alla-sh/)
 
 ## 🙏 Acknowledgements
 
