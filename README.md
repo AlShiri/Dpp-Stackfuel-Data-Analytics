@@ -60,12 +60,12 @@ Kaggle: https://www.kaggle.com/datasets/laotse/credit-risk-dataset
 32581 rows, 12 columns
 
 **Important Features:** 
-'cb_person_default_on_file' - renamed to -> 'default'
-'loan_status' - target variable (0 - no default, 1 - default)
-'loan_grade' - creditworthiness
-'loan_amnt' - loan amount                  
-'loan_int_rate' - loan interest rate 
-'loan_percent_income' - loan to income ration
+'cb_person_default_on_file' - renamed to -> 'default'  
+'loan_status' - target variable (0 - no default, 1 - default)    
+'loan_grade' - creditworthiness  
+'loan_amnt' - loan amount         
+'loan_int_rate' - loan interest rate    
+'loan_percent_income' - loan to income ration  
 
 ## 🤖 Methodik
 
@@ -82,18 +82,18 @@ Discrepancies:
 
 ### Modeling Approach  
 We applied logistic regression to model the probability of loan default.  
-- Tested univariate models ('loan_percent_income', 'loan_int_rate')  
+- Tested multiivariate model ('loan_percent_income', 'loan_int_rate')  
 - Fitted using statsmodels.formula.api.logit()
 
 ### Evaluation
-- Model fit assessed using Pseudo R² (0.13 for main model)
-- Probability curves visualized to interpret risk thresholds  
+- Model fit assessed using Pseudo R² (0.23)
+- Probability curve visualized to interpret risk thresholds  
 
 ## 📈 Results
 
 **Model Performance:**
-- Logistic regression identifies high-risk borrowers effectively based on income and interest rate  
-- 50% risk threshold found around ~0.35 loan-to-income ratio
+- Logistic regression identifies high-risk borrowers effectively based on loan-to-income rato and interest rate  
+- 50% risk threshold found around ~0.37 loan-to-income ratio
 
 **Key Visualizations:**
 1. Default rate by loan purpose
@@ -142,8 +142,9 @@ Alla Shirinyan
 **LinkedIn:** [Alla Shirinyan](https://www.linkedin.com/in/alla-sh/)
 
 ## 🙏 Acknowledgements
-
-<!-- Hier kannst du Personen oder Ressourcen erwähnen, die dir geholfen haben -->
+Special thanks to StackFuel for learning platform, and guidance during the Data Analytics program.
+Additional thanks to mentors and peers for feedback and discussions that helped shape this project.
+Thanks to the Kaggle community for making open datasets available for educational and analytical purposes.
 
 ---
 
